@@ -1,0 +1,11 @@
+@funscraper_HostAddress = http://localhost:5277
+
+GET {{funscraper_HostAddress}}/weatherforecast/
+Accept: application/json
+
+GET {{funscraper_HostAddress}}/vnexpress/
+Accept: application/json
+
+GET {{funscraper_HostAddress}}/tuoitre/
+Accept: application/json
+###
