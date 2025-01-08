@@ -1,0 +1,65 @@
+{
+    "error": 0,
+    "data": [
+      {
+        "article_type": 7,
+        "original_cate": 1006115,
+        "site_id": 1002565,
+        "title": "Sample Title",
+        "lead": "Trò chuyện với VnExpress, hậu vệ Phạm Xuân Mạnh miêu tả lời căn dặn của HLV Kim Sang-sik trước lượt về chung kết ASEAN Cup 2024 với Thái Lan trên sân Rajamangala là chất xúc tác cực mạnh vào trái tim và khối óc các cầu thủ.",
+        "share_url": "https://vnexpress.net/sample_url.html",
+        "thumbnail_url": "https://i-thethao.vnecdn.net/2025/01/11/xuanmanh2-1736569089-5001-1736569147.png",
+        "privacy": 33280,
+        "list_reference": {
+          "article": [
+            4837534,
+            4836995,
+            4837096,
+            4836805,
+            4836679,
+            4836490
+          ]
+        },
+        "list_category": [
+          1002565,
+          1002567,
+          1002568,
+          1006113,
+          1006115
+        ],
+        "publish_time": 1736569841,
+        "show_listing": 1,
+        "config": {
+          "font": {
+            "title": "",
+            "lead": "",
+            "body": "",
+            "subtitle": "",
+            "quote": ""
+          },
+          "weight": {
+            "title": "",
+            "lead": "",
+            "body": "",
+            "subtitle": "",
+            "quote": ""
+          },
+          "word_count": "2802",
+          "offReaction": {
+            "funny": "1"
+          }
+        },
+        "update_time": 1736579390,
+        "total_comment": 22,
+        "mode_view": 1,
+        "web_view": 1,
+        "off_thumb": 0,
+        "hard_news": 0,
+        "location_address": 0,
+        "type_new": 0,
+        "article_id": 4838014,
+        "location_stamp": {},
+        "is_stick": 0
+      }
+    ]
+  }
