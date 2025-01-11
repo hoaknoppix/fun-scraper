@@ -1,0 +1,77 @@
+## User-specific files
+.idea/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+## Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Dd]ist/
+[Dd]ebug-*/ 
+[Dd]ist-*/ 
+x64/
+x86/
+[Aa]rm/
+[Aa]rm64/
+bin/
+obj/
+
+## .NET Core and .NET specific files
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+## User-specific settings
+.vs/
+.vs2017/
+.vs2019/
+.vs2015/
+
+## Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+## Windows Installer (Visual Studio)
+**/bin/
+**/obj/
+
+## Rider specific
+.idea/
+
+## Mac specific
+.DS_Store
+
+## Windows specific
+Thumbs.db
+
+# JetBrains Rider
+.idea/
+
+# User-specific files
+.vscode/
+
+# ASP.NET Core
+wwwroot/
+
+# Xamarin Studio
+.idea/
+
+# NUGET
+.nuget/
+# Ignore the packages folder
+packages/
+
+# Microsoft Azure Functions (if applicable)
+.vscode/
+.vs/
+
+# .NET Core SDK's global.json
+.global.json
+
+# ASP.NET Temp files
+~$*
