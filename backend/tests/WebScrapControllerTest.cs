@@ -14,7 +14,7 @@ using System.Text.Json;
 public class WebScrapControllerTest
 {
     [Fact]
-    public async void GetTuoiTreValidContent()
+    public async Task GetTuoiTreValidContent()
     {
         var mockHttpClient = new Mock<HttpClient>();
         var mockTuoiTreService = new Mock<TuoiTreScrapService>(mockHttpClient.Object);
@@ -31,7 +31,7 @@ public class WebScrapControllerTest
     }
 
     [Fact]
-    public async void GetTuoiTreServerError()
+    public async Task GetTuoiTreServerError()
     {
         var mockHttpClient = new Mock<HttpClient>();
         var mockTuoiTreService = new Mock<TuoiTreScrapService>(mockHttpClient.Object);
@@ -49,7 +49,7 @@ public class WebScrapControllerTest
     }
 
     [Fact]
-    public async void GetVnExpressValidContent()
+    public async Task GetVnExpressValidContent()
     {
         var mockHttpClient = new Mock<HttpClient>();
         var mockVnExpressService = new Mock<VnExpressScrapService>(mockHttpClient.Object);
@@ -65,7 +65,7 @@ public class WebScrapControllerTest
     }
 
     [Fact]
-    public async void GetVnExpressServerError()
+    public async Task GetVnExpressServerError()
     {
         var mockHttpClient = new Mock<HttpClient>();
         var mockVnExpressService = new Mock<VnExpressScrapService>(mockHttpClient.Object);
@@ -83,7 +83,7 @@ public class WebScrapControllerTest
     }
 
     [Fact]
-    public async void GetVnExpressJSONError()
+    public async Task GetVnExpressJSONError()
     {
         var mockHttpClient = new Mock<HttpClient>();
         var mockVnExpressService = new Mock<VnExpressScrapService>(mockHttpClient.Object);

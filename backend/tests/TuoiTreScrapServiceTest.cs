@@ -10,7 +10,7 @@ using Xunit;
 public class TuoiTreScrapServiceTest
 {
     [Fact]
-    public async void EmptyContent()
+    public async Task EmptyContent()
     {
         var mockHandler = new Mock<HttpMessageHandler>();
         mockHandler
@@ -19,16 +19,16 @@ public class TuoiTreScrapServiceTest
         var httpClient = mockHandler.CreateClient();
         TuoiTreScrapService tuoiTreScrapService = new TuoiTreScrapService(httpClient);
         var result = await tuoiTreScrapService.GetContent();
-        Assert.Equal(0, result.Count);
+        Assert.Empty(result);
     }
 
     [Fact]
-    public async void ValidContent()
+    public async Task ValidContent()
     {
         HttpClient httpClient = MockHttpClient();
         TuoiTreScrapService tuoiTreScrapService = new TuoiTreScrapService(httpClient);
         var result = await tuoiTreScrapService.GetContent();
-        Assert.Equal(1, result.Count);
+        Assert.Single(result);
         Assert.Equal(56, result[0].like);
         Assert.Equal("Sample title", result[0].title);
         Assert.Equal(
@@ -39,8 +39,8 @@ public class TuoiTreScrapServiceTest
 
     private static HttpClient MockHttpClient()
     {
-        var currentDirectory = Directory.GetCurrentDirectory();
-        var projectRootDirectory = Directory.GetParent(currentDirectory).Parent.Parent.FullName;
+        var currentDirectory = Directory.GetCurrentDirectory() ?? "";
+        var projectRootDirectory = Directory.GetParent(currentDirectory)?.Parent?.Parent?.FullName ?? "";
         var filePath = Path.Combine(projectRootDirectory, "TestData", "dummy_tuoitre.html");
         var fileContent = File.ReadAllText(filePath);
         var mockHandler = new Mock<HttpMessageHandler>();

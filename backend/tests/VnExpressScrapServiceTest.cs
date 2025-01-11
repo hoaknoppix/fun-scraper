@@ -10,7 +10,7 @@ using Xunit;
 public class VnExpressScrapServiceTest
 {
     [Fact]
-    public async void EmptyContent()
+    public async Task EmptyContent()
     {
         // Arrange
         var mockHandler = new Mock<HttpMessageHandler>();
@@ -23,16 +23,16 @@ public class VnExpressScrapServiceTest
         var httpClient = mockHandler.CreateClient();
         VnExpressScrapService vnExpressScrapService = new VnExpressScrapService(httpClient);
         var result = await vnExpressScrapService.GetContent();
-        Assert.Equal(0, result.Count);
+        Assert.Empty(result);
     }
 
     [Fact]
-    public async void ValidContent()
+    public async Task ValidContent()
     {
         HttpClient httpClient = MockHttpClient();
         VnExpressScrapService vnExpressScrapService = new VnExpressScrapService(httpClient);
         var result = await vnExpressScrapService.GetContent();
-        Assert.Equal(1, result.Count);
+        Assert.Single(result);
         Assert.Equal(5, result[0].like);
         Assert.Equal("Sample Title", result[0].title);
         Assert.Equal("https://vnexpress.net/sample_url.html", result[0].url);
@@ -40,8 +40,8 @@ public class VnExpressScrapServiceTest
 
     private static HttpClient MockHttpClient()
     {
-        var currentDirectory = Directory.GetCurrentDirectory();
-        var projectRootDirectory = Directory.GetParent(currentDirectory).Parent.Parent.FullName;
+        var currentDirectory = Directory.GetCurrentDirectory() ?? "";
+        var projectRootDirectory = Directory.GetParent(currentDirectory)?.Parent?.Parent?.FullName ?? "";
         var filePath = Path.Combine(projectRootDirectory, "TestData", "dummy_vnexpress.json");
         var fileContent = File.ReadAllText(filePath);
         var mockHandler = new Mock<HttpMessageHandler>();
