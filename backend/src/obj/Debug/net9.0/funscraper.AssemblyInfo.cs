@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("funscraper")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+459c93a860815b31d60f230de7d2ce2b9197d6bc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1f3364b95ae2e757b9e6f5380e2b6c4fed1405cf")]
 [assembly: System.Reflection.AssemblyProductAttribute("funscraper")]
 [assembly: System.Reflection.AssemblyTitleAttribute("funscraper")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

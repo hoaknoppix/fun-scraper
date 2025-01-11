@@ -39,9 +39,7 @@ public class TuoiTreScrapService : IWebScrapService
         {
             return new List<Content>();
         }
-        var html1 = htmlDoc
-                    .DocumentNode
-                    .SelectSingleNode("//div[@id='load-list-news']").OuterHtml;
+        var html1 = htmlDoc.DocumentNode.SelectSingleNode("//div[@id='load-list-news']").OuterHtml;
         htmlDoc.LoadHtml(html1);
         var items = htmlDoc.DocumentNode.SelectNodes("//div[@class='box-category-item']").ToList();
         var data = new List<Content>();
@@ -51,11 +49,7 @@ public class TuoiTreScrapService : IWebScrapService
                 "https://tuoitre.vn" + item.SelectSingleNode("a").Attributes["href"].Value;
             var title = item.SelectSingleNode("a").Attributes["title"].Value;
             var totalLike = await GetTotalLike(shareUrl);
-            var content = new Content(
-                            totalLike,
-                            title,
-                            shareUrl
-                        );
+            var content = new Content(totalLike, title, shareUrl);
             data.Add(content);
         }
         data = data.OrderByDescending(content => content.like).ToList();

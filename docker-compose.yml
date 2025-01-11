@@ -1,0 +1,47 @@
+version: "3"
+services:
+  fun-scraper-backend:
+    build:
+      context: ./backend
+    container_name: fun-scraper-backend
+    ports:
+      - "8080:80"
+    network_mode: host 
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    network_mode: host 
+    depends_on:
+      - fun-scraper-backend
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+  
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    network_mode: host
+    depends_on:
+      - prometheus
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: "admin"
+    volumes:
+      - ./grafana/provisioning:/etc/grafana/provisioning
+      - ./grafana/dashboards:/etc/grafana/dashboards
+  fun-scraper-frontend:
+    build:
+      context: ./frontend
+    container_name: fun-scraper-frontend
+    ports:
+      - "80:80"
+    network_mode: host
+    depends_on:
+      - fun-scraper-backend
+networks:
+  monitoring:
+    driver: bridge  

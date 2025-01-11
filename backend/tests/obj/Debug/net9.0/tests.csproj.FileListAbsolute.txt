@@ -113,3 +113,5 @@
 /Users/hoatran/Documents/xprojects/fun-scraper/backend/tests/bin/Debug/net9.0/Moq.dll
 /Users/hoatran/Documents/xprojects/fun-scraper/backend/tests/bin/Debug/net9.0/runtimes/win/lib/net6.0/System.Diagnostics.EventLog.Messages.dll
 /Users/hoatran/Documents/xprojects/fun-scraper/backend/tests/bin/Debug/net9.0/Moq.Contrib.HttpClient.dll
+/Users/hoatran/Documents/xprojects/fun-scraper/backend/tests/bin/Debug/net9.0/Prometheus.NetStandard.dll
+/Users/hoatran/Documents/xprojects/fun-scraper/backend/tests/bin/Debug/net9.0/Prometheus.AspNetCore.dll

@@ -34,3 +34,5 @@
 /Users/hoatran/Documents/xprojects/fun-scraper/backend/src/obj/Debug/net9.0/funscraper.pdb
 /Users/hoatran/Documents/xprojects/fun-scraper/backend/src/obj/Debug/net9.0/funscraper.genruntimeconfig.cache
 /Users/hoatran/Documents/xprojects/fun-scraper/backend/src/obj/Debug/net9.0/ref/funscraper.dll
+/Users/hoatran/Documents/xprojects/fun-scraper/backend/src/bin/Debug/net9.0/Prometheus.NetStandard.dll
+/Users/hoatran/Documents/xprojects/fun-scraper/backend/src/bin/Debug/net9.0/Prometheus.AspNetCore.dll
