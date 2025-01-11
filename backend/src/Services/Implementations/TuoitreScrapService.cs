@@ -12,8 +12,6 @@ public class TuoiTreScrapService : IWebScrapService
 
     public async Task<Int32> GetTotalLike(String url)
     {
-        Console.WriteLine("Hello");
-        Console.WriteLine(url);
         var html = await _httpClient.GetStringAsync(url);
         var htmlDoc = new HtmlDocument();
         htmlDoc.LoadHtml(html);
@@ -30,13 +28,17 @@ public class TuoiTreScrapService : IWebScrapService
         return totalLike;
     }
 
-    public async Task<List<Content>> GetContent()
+    public virtual async Task<List<Content>> GetContent()
     {
         string url = "https://tuoitre.vn/tin-moi-nhat.htm";
 
         var html = await _httpClient.GetStringAsync(url);
         var htmlDoc = new HtmlDocument();
         htmlDoc.LoadHtml(html);
+        if (htmlDoc.DocumentNode.SelectSingleNode("//div[@id='load-list-news']") == null)
+        {
+            return new List<Content>();
+        }
         var html1 = htmlDoc
                     .DocumentNode
                     .SelectSingleNode("//div[@id='load-list-news']").OuterHtml;

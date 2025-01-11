@@ -42,7 +42,7 @@ public class VnExpressScrapService : IWebScrapService
         }
     }
 
-    public async Task<List<Content>> GetContent()
+    public virtual async Task<List<Content>> GetContent()
     {
         string url =
             "https://alpha3-api3.vnexpress.net/api/mobile?type=homev5&app_id=9e304d&offset=0";

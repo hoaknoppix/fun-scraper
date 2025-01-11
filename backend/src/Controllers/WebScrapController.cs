@@ -5,7 +5,10 @@ namespace WebScrapApi.Controllers
 {
     [Route("/")]
     [ApiController]
-    public class WebScrapController(VnExpressScrapService vnExpressScrapService, TuoiTreScrapService tuoiTreScrapService) : ControllerBase
+    public class WebScrapController(
+        VnExpressScrapService vnExpressScrapService,
+        TuoiTreScrapService tuoiTreScrapService
+    ) : ControllerBase
     {
         private readonly VnExpressScrapService _vnExpressScrapService = vnExpressScrapService;
         private readonly TuoiTreScrapService _tuoiTreScrapService = tuoiTreScrapService;
@@ -39,10 +42,6 @@ namespace WebScrapApi.Controllers
             catch (HttpRequestException e)
             {
                 return StatusCode(500, $"Error fetching data: {e.Message}");
-            }
-            catch (JsonException e)
-            {
-                return StatusCode(500, $"Error parsing JSON: {e.Message}");
             }
         }
     }
